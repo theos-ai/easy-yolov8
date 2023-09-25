@@ -1,0 +1,161 @@
+classes:
+  - name: person
+    color: '#00ffc3'
+  - name: bicycle
+    color: '#00ffc3'
+  - name: car
+    color: '#00ffc3'
+  - name: motorcycle
+    color: '#00ffc3'
+  - name: airplane
+    color: '#00ffc3'
+  - name: bus
+    color: '#00ffc3'
+  - name: train
+    color: '#00ffc3'
+  - name: truck
+    color: '#00ffc3'
+  - name: boat
+    color: '#00ffc3'
+  - name: traffic light
+    color: '#00ffc3'
+  - name: fire hydrant
+    color: '#00ffc3'
+  - name: stop sign
+    color: '#00ffc3'
+  - name: parking meter
+    color: '#00ffc3'
+  - name: bench
+    color: '#00ffc3'
+  - name: bird
+    color: '#00ffc3'
+  - name: cat
+    color: '#00ffc3'
+  - name: dog
+    color: '#00ffc3'
+  - name: horse
+    color: '#00ffc3'
+  - name: sheep
+    color: '#00ffc3'
+  - name: cow
+    color: '#00ffc3'
+  - name: elephant
+    color: '#00ffc3'
+  - name: bear
+    color: '#00ffc3'
+  - name: zebra
+    color: '#00ffc3'
+  - name: giraffe
+    color: '#00ffc3'
+  - name: backpack
+    color: '#00ffc3'
+  - name: umbrella
+    color: '#00ffc3'
+  - name: handbag
+    color: '#00ffc3'
+  - name: tie
+    color: '#00ffc3'
+  - name: suitcase
+    color: '#00ffc3'
+  - name: frisbee
+    color: '#00ffc3'
+  - name: skis
+    color: '#00ffc3'
+  - name: snowboard
+    color: '#00ffc3'
+  - name: sports ball
+    color: '#00ffc3'
+  - name: kite
+    color: '#00ffc3'
+  - name: baseball bat
+    color: '#00ffc3'
+  - name: baseball glove
+    color: '#00ffc3'
+  - name: skateboard
+    color: '#00ffc3'
+  - name: surfboard
+    color: '#00ffc3'
+  - name: tennis racket
+    color: '#00ffc3'
+  - name: bottle
+    color: '#00ffc3'
+  - name: wine glass
+    color: '#00ffc3'
+  - name: cup
+    color: '#00ffc3'
+  - name: fork
+    color: '#00ffc3'
+  - name: knife
+    color: '#00ffc3'
+  - name: spoon
+    color: '#00ffc3'
+  - name: bowl
+    color: '#00ffc3'
+  - name: banana
+    color: '#00ffc3'
+  - name: apple
+    color: '#00ffc3'
+  - name: sandwich
+    color: '#00ffc3'
+  - name: orange
+    color: '#00ffc3'
+  - name: broccoli
+    color: '#00ffc3'
+  - name: broccoli
+    color: '#00ffc3'
+  - name: hot dog
+    color: '#00ffc3'
+  - name: pizza
+    color: '#00ffc3'
+  - name: donut
+    color: '#00ffc3'
+  - name: cake
+    color: '#00ffc3'
+  - name: chair
+    color: '#00ffc3'
+  - name: couch
+    color: '#00ffc3'
+  - name: potted plant
+    color: '#00ffc3'
+  - name: bed
+    color: '#00ffc3'
+  - name: dining table
+    color: '#00ffc3'
+  - name: toilet
+    color: '#00ffc3'
+  - name: tv
+    color: '#00ffc3'
+  - name: laptop
+    color: '#00ffc3'
+  - name: mouse
+    color: '#00ffc3'
+  - name: remote
+    color: '#00ffc3'
+  - name: keyboard
+    color: '#00ffc3'
+  - name: cell phone
+    color: '#00ffc3'
+  - name: microwave
+    color: '#00ffc3'
+  - name: oven
+    color: '#00ffc3'
+  - name: toaster
+    color: '#00ffc3'
+  - name: sink
+    color: '#00ffc3'
+  - name: refrigerator
+    color: '#00ffc3'
+  - name: book
+    color: '#00ffc3'
+  - name: clock
+    color: '#00ffc3'
+  - name: vase
+    color: '#00ffc3'
+  - name: scissors
+    color: '#00ffc3'
+  - name: teddy bear
+    color: '#00ffc3'
+  - name: hair drier
+    color: '#00ffc3'
+  - name: toothbrush
+    color: '#00ffc3'
