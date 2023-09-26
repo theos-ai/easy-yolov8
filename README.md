@@ -58,7 +58,7 @@ python streams.py
 
 Watch the following tutorial to learn how to do it.
 
-[![How I Trained an AI to Keep My Dog Safe | YOLOv8 Tutorial](assets/youtube.jpg)](https://www.youtube.com/watch?v=Nm50764VYgQ)
+[![How I Trained an AI to Keep My Dog Safe | YOLOv8 Tutorial](assets/youtube.jpg)](https://www.youtube.com/watch?v=KT0tUrY6JxM)
 
 ### Click the weights button
 
