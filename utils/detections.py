@@ -140,15 +140,14 @@ def draw_connections(img, keypoints, connections):
         from_idx = connection['from']
         to_idx = connection['to']
         if from_idx >= len(keypoints) or to_idx >= len(keypoints):
-            continue  # Skip this connection if either endpoint is out of range
+            continue
         from_keypoint = keypoints[from_idx]
         to_keypoint = keypoints[to_idx]
-        start_point = (int(from_keypoint['x'] * img.shape[1]), int(from_keypoint['y'] * img.shape[0]))
-        end_point = (int(to_keypoint['x'] * img.shape[1]), int(to_keypoint['y'] * img.shape[0]))
+        start_point = (int(from_keypoint['x']), int(from_keypoint['y']))
+        end_point = (int(to_keypoint['x']), int(to_keypoint['y']))
         color = parse_color(connection['color'])
         img = cv2.line(img, start_point, end_point, color, 2)
     return img
-
 
 def draw(image, detections):
     image_copy = image.copy()

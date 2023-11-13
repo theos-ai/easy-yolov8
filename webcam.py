@@ -4,7 +4,7 @@ import json
 import cv2
 
 yolov8 = YOLOv8()
-yolov8.load('best.weights', classes='classes.yaml', device='cpu') # use 'gpu' for CUDA GPU inference
+yolov8.load('coco.weights', classes='coco.yaml', device='cpu') # use 'gpu' for CUDA GPU inference
 
 webcam = cv2.VideoCapture(0)
 

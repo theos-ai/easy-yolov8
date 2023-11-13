@@ -31,9 +31,42 @@ class YOLOv8:
             self.to_gpu()
 
         with open(classes, 'r') as f:
-            self.classes = yaml.load(f, Loader=yaml.FullLoader)
-            self.classes = self.classes['classes']
+            classes = yaml.load(f, Loader=yaml.FullLoader)
+            classes = classes['classes']
+            parsed_classes = []
+            keypoints_to_indices = {}
+            for class_ in classes:
+                if 'skeleton' in class_:
+                    keypoints_to_indices[class_['name']] = {}
+                    if 'keypoints' in class_['skeleton']:
+                        for i, keypoint in enumerate(class_['skeleton']['keypoints']):
+                            keypoints_to_indices[class_['name']][keypoint['id']] = i
+            for class_ in classes:
+                new_class = {
+                    'name': class_['name'],
+                    'color': class_['color']
+                }
+                
+                if 'skeleton' in class_:
+                    new_class['skeleton'] = {
+                        'keypoints': [],
+                        'connections': []
+                    }
+                    if 'connections' in class_['skeleton']:
+                        for connection in class_['skeleton']['connections']:
+                            new_class['skeleton']['connections'].append({
+                                'from': keypoints_to_indices[class_['name']][connection['from']],
+                                'to': keypoints_to_indices[class_['name']][connection['to']],
+                                'color': connection['color']
+                            })
+                    
+                    if 'keypoints' in class_['skeleton']:
+                        for keypoint in class_['skeleton']['keypoints']:
+                            new_class['skeleton']['keypoints'].append(keypoint)
+                
+                parsed_classes.append(new_class)
             
+            self.classes = parsed_classes
 
     def to_gpu(self):
         self.model = YOLO(self.weights, device='cuda')
@@ -53,6 +86,7 @@ class YOLOv8:
             for box in result:
                 position = box['box']
                 keypoints = []
+                box_class = [class_ for class_ in self.classes if class_['name'] == box['name']][0]
                 if 'keypoints' in box:
                     for i, keypoint_x in enumerate(box['keypoints']['x']):
                         keypoints.append({
@@ -68,7 +102,7 @@ class YOLOv8:
                     ('width', int(position['x2'] - position['x1'])),
                     ('height', int(position['y2'] - position['y1'])),
                     ('keypoints', keypoints),
-                    ('color', '#00ffcc')
+                    ('color', box_class['color'])
                 ]))
                 detections.append(box_dict)
 
@@ -77,8 +111,9 @@ class YOLOv8:
     def draw(self, image, detections):
         for detection in detections:
             for class_ in self.classes:
-                if detection['class'] == class_['name']:
-                    detection['connections'] = class_['skeleton']['connections']
+                if detection['class'] == class_['name'] and 'skeleton' in class_:
+                    connections = class_['skeleton']['connections']
+                    detection['connections'] = connections
                     break
         return draw(image, detections)
 
