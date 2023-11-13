@@ -1,5 +1,4 @@
 from algorithm.object_detector import YOLOv8
-from utils.detections import draw
 from multiprocessing import Pool
 import json
 import cv2
@@ -23,7 +22,7 @@ def detect(url):
             ret, frame = stream.read()
             if ret == True:
                 detections = yolov8.detect(frame)
-                detected_frame = draw(frame, detections)
+                detected_frame = yolov8.draw(frame, detections)
                 print(f'\n{url}:\n', json.dumps(detections, indent=4))
                 cv2.imshow(url, detected_frame)
                 cv2.waitKey(1)

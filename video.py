@@ -1,5 +1,4 @@
 from algorithm.object_detector import YOLOv8
-from utils.detections import draw
 from tqdm import tqdm
 import cv2
 
@@ -25,7 +24,7 @@ try:
         ret, frame = video.read()
         if ret == True:
             detections = yolov8.detect(frame)
-            detected_frame = draw(frame, detections)
+            detected_frame = yolov8.draw(frame, detections)
             output.write(detected_frame)
             pbar.update(1)
         else:
